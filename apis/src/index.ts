@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { poolCreated } from "./db/schema/Listener"; // Adjust the import path as necessary
-import {types, db, App} from "sim-idx"; // Import schema to ensure it's registered
+import {types, db, App} from "@duneanalytics/sim-idx"; // Import schema to ensure it's registered
 
 const filterToken0 = types.Address.from("7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9");
 
