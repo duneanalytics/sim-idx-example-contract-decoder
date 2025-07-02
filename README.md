@@ -10,9 +10,9 @@ sim init --template=contract-decoder
 
 This will scaffold a new Sim IDX app in your current directory, pre-configured with the example of decoding Uniswap's V3 Factory contract.
 
-For a complete, step-by-step guide on how to customize this template to decode a different contract, please refer to our [official documentation](https://docs.sim.dune.com/idx/resources/templates).
+For a complete, step-by-step guide on how to customize this template to decode a different contract, please refer to our [official documentation](https://docs.sim.dune.com/idx/guides/decode-any-contract).
 
-[**View the Full Contract Decoder Guide**](https://docs.sim.dune.com/idx/resources/templates)
+[**View the Full Contract Decoder Guide**](https://docs.sim.dune.com/idx/guides/decode-any-contract)
 
 ## Use Cases
 
