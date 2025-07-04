@@ -7,44 +7,44 @@ import "lib/sim-idx-sol/src/Context.sol";
 function UniswapV3Factory$Abi() pure returns (Abi memory) {
     return Abi("UniswapV3Factory");
 }
-struct UniswapV3Factory$createPoolFunctionInputs {
+struct UniswapV3Factory$CreatePoolFunctionInputs {
     address tokenA;
     address tokenB;
     uint24 fee;
 }
 
-struct UniswapV3Factory$createPoolFunctionOutputs {
+struct UniswapV3Factory$CreatePoolFunctionOutputs {
     address pool;
 }
 
-struct UniswapV3Factory$enableFeeAmountFunctionInputs {
+struct UniswapV3Factory$EnableFeeAmountFunctionInputs {
     uint24 fee;
     int24 tickSpacing;
 }
 
-struct UniswapV3Factory$feeAmountTickSpacingFunctionInputs {
+struct UniswapV3Factory$FeeAmountTickSpacingFunctionInputs {
     uint24 outArg0;
 }
 
-struct UniswapV3Factory$feeAmountTickSpacingFunctionOutputs {
+struct UniswapV3Factory$FeeAmountTickSpacingFunctionOutputs {
     int24 outArg0;
 }
 
-struct UniswapV3Factory$getPoolFunctionInputs {
+struct UniswapV3Factory$GetPoolFunctionInputs {
     address outArg0;
     address outArg1;
     uint24 outArg2;
 }
 
-struct UniswapV3Factory$getPoolFunctionOutputs {
+struct UniswapV3Factory$GetPoolFunctionOutputs {
     address outArg0;
 }
 
-struct UniswapV3Factory$ownerFunctionOutputs {
+struct UniswapV3Factory$OwnerFunctionOutputs {
     address outArg0;
 }
 
-struct UniswapV3Factory$parametersFunctionOutputs {
+struct UniswapV3Factory$ParametersFunctionOutputs {
     address factory;
     address token0;
     address token1;
@@ -52,7 +52,7 @@ struct UniswapV3Factory$parametersFunctionOutputs {
     int24 tickSpacing;
 }
 
-struct UniswapV3Factory$setOwnerFunctionInputs {
+struct UniswapV3Factory$SetOwnerFunctionInputs {
     address _owner;
 }
 
@@ -117,7 +117,7 @@ abstract contract UniswapV3Factory$OnPoolCreatedEvent {
 }
 
 abstract contract UniswapV3Factory$OnCreatePoolFunction {
-    function onCreatePoolFunction(FunctionContext memory ctx, UniswapV3Factory$createPoolFunctionInputs memory inputs, UniswapV3Factory$createPoolFunctionOutputs memory outputs) virtual external;
+    function onCreatePoolFunction(FunctionContext memory ctx, UniswapV3Factory$CreatePoolFunctionInputs memory inputs, UniswapV3Factory$CreatePoolFunctionOutputs memory outputs) virtual external;
 
     function triggerOnCreatePoolFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -131,7 +131,7 @@ abstract contract UniswapV3Factory$OnCreatePoolFunction {
 }
 
 abstract contract UniswapV3Factory$PreCreatePoolFunction {
-    function preCreatePoolFunction(PreFunctionContext memory ctx, UniswapV3Factory$createPoolFunctionInputs memory inputs) virtual external;
+    function preCreatePoolFunction(PreFunctionContext memory ctx, UniswapV3Factory$CreatePoolFunctionInputs memory inputs) virtual external;
 
     function triggerPreCreatePoolFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -145,7 +145,7 @@ abstract contract UniswapV3Factory$PreCreatePoolFunction {
 }
 
 abstract contract UniswapV3Factory$OnEnableFeeAmountFunction {
-    function onEnableFeeAmountFunction(FunctionContext memory ctx, UniswapV3Factory$enableFeeAmountFunctionInputs memory inputs) virtual external;
+    function onEnableFeeAmountFunction(FunctionContext memory ctx, UniswapV3Factory$EnableFeeAmountFunctionInputs memory inputs) virtual external;
 
     function triggerOnEnableFeeAmountFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -159,7 +159,7 @@ abstract contract UniswapV3Factory$OnEnableFeeAmountFunction {
 }
 
 abstract contract UniswapV3Factory$PreEnableFeeAmountFunction {
-    function preEnableFeeAmountFunction(PreFunctionContext memory ctx, UniswapV3Factory$enableFeeAmountFunctionInputs memory inputs) virtual external;
+    function preEnableFeeAmountFunction(PreFunctionContext memory ctx, UniswapV3Factory$EnableFeeAmountFunctionInputs memory inputs) virtual external;
 
     function triggerPreEnableFeeAmountFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -173,7 +173,7 @@ abstract contract UniswapV3Factory$PreEnableFeeAmountFunction {
 }
 
 abstract contract UniswapV3Factory$OnFeeAmountTickSpacingFunction {
-    function onFeeAmountTickSpacingFunction(FunctionContext memory ctx, UniswapV3Factory$feeAmountTickSpacingFunctionInputs memory inputs, UniswapV3Factory$feeAmountTickSpacingFunctionOutputs memory outputs) virtual external;
+    function onFeeAmountTickSpacingFunction(FunctionContext memory ctx, UniswapV3Factory$FeeAmountTickSpacingFunctionInputs memory inputs, UniswapV3Factory$FeeAmountTickSpacingFunctionOutputs memory outputs) virtual external;
 
     function triggerOnFeeAmountTickSpacingFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -187,7 +187,7 @@ abstract contract UniswapV3Factory$OnFeeAmountTickSpacingFunction {
 }
 
 abstract contract UniswapV3Factory$PreFeeAmountTickSpacingFunction {
-    function preFeeAmountTickSpacingFunction(PreFunctionContext memory ctx, UniswapV3Factory$feeAmountTickSpacingFunctionInputs memory inputs) virtual external;
+    function preFeeAmountTickSpacingFunction(PreFunctionContext memory ctx, UniswapV3Factory$FeeAmountTickSpacingFunctionInputs memory inputs) virtual external;
 
     function triggerPreFeeAmountTickSpacingFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -201,7 +201,7 @@ abstract contract UniswapV3Factory$PreFeeAmountTickSpacingFunction {
 }
 
 abstract contract UniswapV3Factory$OnGetPoolFunction {
-    function onGetPoolFunction(FunctionContext memory ctx, UniswapV3Factory$getPoolFunctionInputs memory inputs, UniswapV3Factory$getPoolFunctionOutputs memory outputs) virtual external;
+    function onGetPoolFunction(FunctionContext memory ctx, UniswapV3Factory$GetPoolFunctionInputs memory inputs, UniswapV3Factory$GetPoolFunctionOutputs memory outputs) virtual external;
 
     function triggerOnGetPoolFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -215,7 +215,7 @@ abstract contract UniswapV3Factory$OnGetPoolFunction {
 }
 
 abstract contract UniswapV3Factory$PreGetPoolFunction {
-    function preGetPoolFunction(PreFunctionContext memory ctx, UniswapV3Factory$getPoolFunctionInputs memory inputs) virtual external;
+    function preGetPoolFunction(PreFunctionContext memory ctx, UniswapV3Factory$GetPoolFunctionInputs memory inputs) virtual external;
 
     function triggerPreGetPoolFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -229,7 +229,7 @@ abstract contract UniswapV3Factory$PreGetPoolFunction {
 }
 
 abstract contract UniswapV3Factory$OnOwnerFunction {
-    function onOwnerFunction(FunctionContext memory ctx, UniswapV3Factory$ownerFunctionOutputs memory outputs) virtual external;
+    function onOwnerFunction(FunctionContext memory ctx, UniswapV3Factory$OwnerFunctionOutputs memory outputs) virtual external;
 
     function triggerOnOwnerFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -257,7 +257,7 @@ abstract contract UniswapV3Factory$PreOwnerFunction {
 }
 
 abstract contract UniswapV3Factory$OnParametersFunction {
-    function onParametersFunction(FunctionContext memory ctx, UniswapV3Factory$parametersFunctionOutputs memory outputs) virtual external;
+    function onParametersFunction(FunctionContext memory ctx, UniswapV3Factory$ParametersFunctionOutputs memory outputs) virtual external;
 
     function triggerOnParametersFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -285,7 +285,7 @@ abstract contract UniswapV3Factory$PreParametersFunction {
 }
 
 abstract contract UniswapV3Factory$OnSetOwnerFunction {
-    function onSetOwnerFunction(FunctionContext memory ctx, UniswapV3Factory$setOwnerFunctionInputs memory inputs) virtual external;
+    function onSetOwnerFunction(FunctionContext memory ctx, UniswapV3Factory$SetOwnerFunctionInputs memory inputs) virtual external;
 
     function triggerOnSetOwnerFunction() view external returns (Trigger memory) {
         return Trigger({
@@ -299,7 +299,7 @@ abstract contract UniswapV3Factory$OnSetOwnerFunction {
 }
 
 abstract contract UniswapV3Factory$PreSetOwnerFunction {
-    function preSetOwnerFunction(PreFunctionContext memory ctx, UniswapV3Factory$setOwnerFunctionInputs memory inputs) virtual external;
+    function preSetOwnerFunction(PreFunctionContext memory ctx, UniswapV3Factory$SetOwnerFunctionInputs memory inputs) virtual external;
 
     function triggerPreSetOwnerFunction() view external returns (Trigger memory) {
         return Trigger({
