@@ -312,23 +312,42 @@ abstract contract UniswapV3Factory$PreSetOwnerFunction {
     }
 }
 
+
+struct UniswapV3Factory$EmitAllEvents$FeeAmountEnabled {
+  uint24 fee;
+  int24 tickSpacing;
+}
+
+struct UniswapV3Factory$EmitAllEvents$OwnerChanged {
+  address oldOwner;
+  address newOwner;
+}
+
+struct UniswapV3Factory$EmitAllEvents$PoolCreated {
+  address token0;
+  address token1;
+  uint24 fee;
+  int24 tickSpacing;
+  address pool;
+}
+
 contract UniswapV3Factory$EmitAllEvents is
   UniswapV3Factory$OnFeeAmountEnabledEvent,
 UniswapV3Factory$OnOwnerChangedEvent,
 UniswapV3Factory$OnPoolCreatedEvent
 {
-  event FeeAmountEnabled(uint24 fee, int24 tickSpacing);
-event OwnerChanged(address oldOwner, address newOwner);
-event PoolCreated(address token0, address token1, uint24 fee, int24 tickSpacing, address pool);
+  event FeeAmountEnabled(UniswapV3Factory$EmitAllEvents$FeeAmountEnabled);
+  event OwnerChanged(UniswapV3Factory$EmitAllEvents$OwnerChanged);
+  event PoolCreated(UniswapV3Factory$EmitAllEvents$PoolCreated);
 
   function onFeeAmountEnabledEvent(EventContext memory ctx, UniswapV3Factory$FeeAmountEnabledEventParams memory inputs) virtual external override {
-    emit FeeAmountEnabled(inputs.fee, inputs.tickSpacing);
+    emit FeeAmountEnabled(UniswapV3Factory$EmitAllEvents$FeeAmountEnabled(inputs.fee, inputs.tickSpacing));
   }
 function onOwnerChangedEvent(EventContext memory ctx, UniswapV3Factory$OwnerChangedEventParams memory inputs) virtual external override {
-    emit OwnerChanged(inputs.oldOwner, inputs.newOwner);
+    emit OwnerChanged(UniswapV3Factory$EmitAllEvents$OwnerChanged(inputs.oldOwner, inputs.newOwner));
   }
 function onPoolCreatedEvent(EventContext memory ctx, UniswapV3Factory$PoolCreatedEventParams memory inputs) virtual external override {
-    emit PoolCreated(inputs.token0, inputs.token1, inputs.fee, inputs.tickSpacing, inputs.pool);
+    emit PoolCreated(UniswapV3Factory$EmitAllEvents$PoolCreated(inputs.token0, inputs.token1, inputs.fee, inputs.tickSpacing, inputs.pool));
   }
 
   function allTriggers() view external returns (Trigger[] memory) {
